@@ -16,7 +16,7 @@ class UserProfile(models.Model):
 
 
 class FarmWorker(models.Model):
-    farm  = models.ForeignKey(Farm, on_delete=models.CASCADE)
+    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     #Will be good to add some other infomation.
