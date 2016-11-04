@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     last_name = models.CharField(max_length=50)
     user_type = models.CharField(max_length=50)
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    pub_date = models.DateTimeField('date published')
+    # pub_date = models.DateTimeField('date published')
 
 
 class FarmWorker(models.Model):
