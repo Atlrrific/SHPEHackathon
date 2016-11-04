@@ -10,7 +10,6 @@ from django.contrib.auth import authenticate
 from .models import Farm
 from django.template import loader
 from django.contrib.auth import authenticate, login
-from django.urls import reverse
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -29,12 +28,12 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def profile(request):
-    latest_question_list = Farm.objects.order_by('-name')[:5]
+    # latest_question_list = Farm.objects.order_by('-name')[:5]
     template = loader.get_template('app/dashboard.html')
     # context = {
     #     'latest_question_list': latest_question_list,
     # }
-    return HttpResponse(template.render(context, request))
+    return HttpResponse(template.render( request))
 
 def signin(request):
     username = request.POST['email']
